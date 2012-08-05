@@ -18,12 +18,12 @@ public class 加速度_インデックス_ノルム_散布図 extends CreateMyCh
 	}
 
 	@Override
-	protected JFreeChart createJFreeChartFrom(final Reader aIn) throws IOException {
+	protected JFreeChart createJFreeChartFrom(final Reader aReader) throws IOException {
 		final DefaultTableXYDataset tDataset = new DefaultTableXYDataset();
 		final XYSeries tAccelerationX = new XYSeries("AccelerationX", false, false);
 		tDataset.addSeries(tAccelerationX);
 
-		try (BufferedReader tBufferedReader = new BufferedReader(aIn)) {
+		try (BufferedReader tBufferedReader = new BufferedReader(aReader)) {
 			int tIndex = 1;
 			String tLine = null;
 			while ((tLine = tBufferedReader.readLine()) != null) {
